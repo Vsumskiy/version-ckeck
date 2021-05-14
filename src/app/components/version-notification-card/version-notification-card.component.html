@@ -1,0 +1,25 @@
+<ng-container *ngIf="isVersionChanged$ | async">
+    <div class="notification-content" *ngIf="showPopup">
+
+        <button class="close-popup-dialog" (click)="togglePopup()">
+            X
+        </button>
+
+        <h2 >New Updates</h2>
+        <p>
+            A new version of the application is available, please refresh the page.
+        </p>
+
+        <div class="update-btn-wrapper">
+            <button (click)="reloadApp()">
+                Refresh
+            </button>
+        </div>
+    </div>
+
+    <button *ngIf="!showPopup" (click)="togglePopup()">
+        +
+    </button>
+
+</ng-container>
+
